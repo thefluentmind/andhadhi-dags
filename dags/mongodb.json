@@ -1,5 +1,5 @@
 {
-    "name": "Fluentmind Mongodb Embedding Dag",
+    "name": "mongodb",
     "description": "Fluentmind Mongodb Embedding Dag description",
     "operator": "kubernetes",
     "cron": null,
