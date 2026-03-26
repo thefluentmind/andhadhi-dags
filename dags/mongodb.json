@@ -4,7 +4,12 @@
     "operator": "kubernetes",
     "cron": null,
     "params": {},
-    "variables": [],
+    "variables": [
+        {
+            "name": "MONGODB_URI",
+            "type": "secret"
+        }
+    ],
     "tags": [
         "thefluentmind",
         "mongodb",
@@ -18,7 +23,12 @@
             "timeout": "30m",
             "container": {
                 "image": "node:alpine",
-                "env": [],
+                "env": [
+                    {
+                        "name": "MONGODB_URI",
+                        "valueFrom": "MONGODB_URI"
+                    }
+                ],
                 "command": [
                     "node",
                     "mongodb/index.js"

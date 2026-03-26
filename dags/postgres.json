@@ -4,7 +4,12 @@
     "operator": "kubernetes",
     "cron": null,
     "params": {},
-    "variables": [],
+    "variables": [
+        {
+            "name": "POSTGRES_URI",
+            "type": "secret"
+        }
+    ],
     "tags": [
         "thefluentmind",
         "postgres",
@@ -18,7 +23,12 @@
             "timeout": "30m",
             "container": {
                 "image": "node:alpine",
-                "env": [],
+                "env": [
+                    {
+                        "name": "POSTGRES_URI",
+                        "valueFrom": "POSTGRES_URI"
+                    }
+                ],
                 "command": [
                     "node",
                     "postgres/index.js"
