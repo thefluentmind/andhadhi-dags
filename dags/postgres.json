@@ -1,5 +1,5 @@
 {
-    "name": "Fluentmind Postgres Embedding Dag",
+    "name": "postgres",
     "description": "Fluentmind Postgres Embedding Dag description",
     "operator": "kubernetes",
     "cron": null,
