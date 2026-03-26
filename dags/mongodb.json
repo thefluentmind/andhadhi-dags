@@ -1,0 +1,29 @@
+{
+    "name": "Fluentmind Mongodb Embedding Dag",
+    "description": "Fluentmind Mongodb Embedding Dag description",
+    "operator": "kubernetes",
+    "cron": null,
+    "params": {},
+    "variables": [],
+    "tags": [
+        "thefluentmind",
+        "mongodb",
+        "embeddings"
+    ],
+    "tasks": [
+        {
+            "name": "generate-embeddings",
+            "depends_on": [],
+            "retries": 2,
+            "timeout": "30m",
+            "container": {
+                "image": "node:alpine",
+                "env": [],
+                "command": [
+                    "node",
+                    "mongodb/index.js"
+                ]
+            }
+        }
+    ]
+}
