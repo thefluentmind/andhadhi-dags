@@ -6,7 +6,11 @@
     "params": {},
     "variables": [
         {
-            "name": "POSTGRES_URI",
+            "name": "FLUENTMIND_API_URI",
+            "type": "secret"
+        },
+        {
+            "name": "FLUENTMIND_API_KEY",
             "type": "secret"
         }
     ],
@@ -25,8 +29,12 @@
                 "image": "node:alpine",
                 "env": [
                     {
-                        "name": "POSTGRES_URI",
-                        "valueFrom": "POSTGRES_URI"
+                        "name": "FLUENTMIND_API_URI",
+                        "valueFrom": "FLUENTMIND_API_URI"
+                    },
+                    {
+                        "name": "FLUENTMIND_API_KEY",
+                        "valueFrom": "FLUENTMIND_API_KEY"
                     }
                 ],
                 "command": [
